@@ -1901,6 +1901,8 @@ SimpleMDE.redo = redo;
 SimpleMDE.togglePreview = togglePreview;
 SimpleMDE.toggleSideBySide = toggleSideBySide;
 SimpleMDE.toggleFullScreen = toggleFullScreen;
+SimpleMDE.toolbarBuiltInButtons = toolbarBuiltInButtons;
+SimpleMDE.insertTexts = insertTexts;
 
 /**
  * Bind instance methods for exports.
@@ -1998,6 +2000,10 @@ SimpleMDE.prototype.getState = function() {
 	var cm = this.codemirror;
 
 	return getState(cm);
+};
+
+SimpleMDE.prototype.replaceSelection = function() {
+	_replaceSelection.apply(this, arguments);
 };
 
 SimpleMDE.prototype.toTextArea = function() {
